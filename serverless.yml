@@ -59,9 +59,17 @@ package:
 functions:
   get-transactions:
     handler: com.serverless.GetTransactionsHandler
+    events:
+      - http:
+          path: /accounts/{account_id}/transactions
+          method: get
+
   post-transaction:
     handler: com.serverless.PostTransactionsHandler
-
+    events:
+      - http:
+          path: /accounts/{account_id}/transactions
+          method: post
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
